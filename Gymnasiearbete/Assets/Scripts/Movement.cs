@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.RightArrow)) { rb.velocity = Vector2.right * speed; }
+        if (Input.GetKeyDown(KeyCode.RightArrow)){ rb.velocity = Vector2.right * speed; }
         else if (Input.GetKeyDown(KeyCode.LeftArrow)) { rb.velocity = Vector2.left * speed; }
         else if (Input.GetKeyDown(KeyCode.UpArrow)) { rb.velocity = Vector2.up * speed; }
         else if (Input.GetKeyDown(KeyCode.DownArrow)) { rb.velocity = Vector2.down * speed; }
