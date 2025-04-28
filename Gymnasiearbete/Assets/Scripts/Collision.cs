@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Collision : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Collision : MonoBehaviour
     {
         edgeCollider = this.GetComponent <EdgeCollider2D>();
         CreateEdgeCollider();
+        
     }
     void CreateEdgeCollider()
     {
@@ -21,9 +23,13 @@ public class Collision : MonoBehaviour
         edgeCollider.SetPoints(edges);
     }
 
-    void OnCollisisonEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Rigidbody2D collidingRB = collision.transform.GetComponent<Rigidbody2D>();
-        collidingRB.velocity = Vector3.zero;
+        Die();
+    }
+
+    private void Die()
+    {
+        SceneManager.LoadSceneAsync(2);
     }
 }
